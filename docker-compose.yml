@@ -1,0 +1,147 @@
+version: "3"
+
+
+services:
+  bee-1: &beeBaseConfig
+    image: ethersphere/bee:0.6.0
+    restart: unless-stopped
+    environment:
+      - BEE_API_ADDR
+      - BEE_BOOTNODE
+      - BEE_BOOTNODE_MODE
+      - BEE_CLEF_SIGNER_ENABLE
+      - BEE_CLEF_SIGNER_ENDPOINT=http://clef-1:8550
+      - BEE_CONFIG
+      - BEE_CORS_ALLOWED_ORIGINS
+      - BEE_DATA_DIR
+      - BEE_CACHE_CAPACITY
+      - BEE_DB_OPEN_FILES_LIMIT
+      - BEE_DB_BLOCK_CACHE_CAPACITY
+      - BEE_DB_WRITE_BUFFER_SIZE
+      - BEE_DB_DISABLE_SEEKS_COMPACTION
+      - BEE_DEBUG_API_ADDR
+      - BEE_DEBUG_API_ENABLE
+      - BEE_GATEWAY_MODE
+      - BEE_GLOBAL_PINNING_ENABLE
+      - BEE_NAT_ADDR
+      - BEE_NETWORK_ID
+      - BEE_P2P_ADDR
+      - BEE_P2P_QUIC_ENABLE
+      - BEE_P2P_WS_ENABLE
+      - BEE_PASSWORD
+      - BEE_PASSWORD_FILE
+      - BEE_PAYMENT_EARLY
+      - BEE_PAYMENT_THRESHOLD
+      - BEE_PAYMENT_TOLERANCE
+      - BEE_RESOLVER_OPTIONS
+      - BEE_STANDALONE
+      - BEE_SWAP_ENABLE
+      - BEE_SWAP_ENDPOINT
+      - BEE_SWAP_FACTORY_ADDRESS
+      - BEE_SWAP_INITIAL_DEPOSIT
+      - BEE_TRACING_ENABLE
+      - BEE_TRACING_ENDPOINT
+      - BEE_TRACING_SERVICE_NAME
+      - BEE_VERBOSITY
+      - BEE_WELCOME_MESSAGE
+
+    ports:
+      - "1633:1633"
+      - "1634:1634"
+      - "127.0.0.1:1635:1635"
+    volumes:
+      - bee-1:/home/bee/.bee
+    command: start
+
+  bee-2:
+    <<: *beeBaseConfig
+    ports:
+      - "1733:1633"
+      - "1734:1634"
+      - "127.0.0.1:1735:1635"
+    volumes:
+      - bee-2:/home/bee/.bee
+
+  bee-3:
+    <<: *beeBaseConfig
+    ports:
+      - "1833:1633"
+      - "1834:1634"
+      - "127.0.0.1:1835:1635"
+    volumes:
+      - bee-3:/home/bee/.bee
+
+  bee-4:
+    <<: *beeBaseConfig
+    ports:
+      - "1933:1633"
+      - "1934:1634"
+      - "127.0.0.1:1935:1635"
+    volumes:
+      - bee-4:/home/bee/.bee
+
+  bee-5:
+    <<: *beeBaseConfig
+    ports:
+      - "2033:1633"
+      - "2034:1634"
+      - "127.0.0.1:2035:1635"
+    volumes:
+      - bee-5:/home/bee/.bee
+
+  bee-6:
+    <<: *beeBaseConfig
+    ports:
+      - "2133:1633"
+      - "2134:1634"
+      - "127.0.0.1:2135:1635"
+    volumes:
+      - bee-6:/home/bee/.bee
+
+  bee-7:
+    <<: *beeBaseConfig
+    ports:
+      - "2233:1633"
+      - "2234:1634"
+      - "127.0.0.1:2235:1635"
+    volumes:
+      - bee-7:/home/bee/.bee
+
+  bee-8:
+    <<: *beeBaseConfig
+    ports:
+      - "2333:1633"
+      - "2334:1634"
+      - "127.0.0.1:2335:1635"
+    volumes:
+      - bee-8:/home/bee/.bee
+
+  bee-9:
+    <<: *beeBaseConfig
+    ports:
+      - "2433:1633"
+      - "2434:1634"
+      - "127.0.0.1:2435:1635"
+    volumes:
+      - bee-9:/home/bee/.bee
+
+  bee-10:
+    <<: *beeBaseConfig
+    ports:
+      - "2533:1633"
+      - "2534:1634"
+      - "127.0.0.1:2535:1635"
+    volumes:
+      - bee-10:/home/bee/.bee
+
+volumes:
+  bee-1:
+  bee-2:
+  bee-3:
+  bee-4:
+  bee-5:
+  bee-6:
+  bee-7:
+  bee-8:
+  bee-9:
+  bee-10:
