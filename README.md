@@ -1,14 +1,16 @@
-## Requirements
-- install docker compose
+## Docker Compose 
+First install docker compose 
+setup `BEE_PASSWORD` and `BEE_SWAP_ENDPOINT`, then start it by
+``` docker-compose up -d```
 
-- install python and libraries
-
+You can reduce the nodes number by on your needs
 
 ## Cashout
-- cash out all cheque
-
-``` python cashout.py cashoutAll 0 ```
+In order to run the command to cashout cheque, you need to install `python` and `requests` library
 
 
-## Docker Compose 
-You can reduce the nodes number by on your needs
+cashout command
+
+```python cashout.py cashoutAll 0```
+
+
