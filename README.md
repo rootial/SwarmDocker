@@ -1,5 +1,6 @@
 ## Docker Compose 
 First install docker compose 
+
 setup `BEE_PASSWORD` and `BEE_SWAP_ENDPOINT`, then start it by
 ``` docker-compose up -d```
 
